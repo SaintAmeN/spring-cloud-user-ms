@@ -25,7 +25,7 @@ public class Employee implements IBaseEntity{
 
     @ManyToMany(fetch = FetchType.EAGER)
     @EqualsAndHashCode.Exclude
-    private Set<EmployeeRole> role;
+    private Set<AccountRole> roles;
 
     // UUID of user account to be activated.
     // If activation id is null, than account is active, if not, it is inactive

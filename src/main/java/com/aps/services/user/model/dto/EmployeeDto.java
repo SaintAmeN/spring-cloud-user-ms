@@ -1,12 +1,14 @@
 package com.aps.services.user.model.dto;
 
 import com.aps.services.user.exception.usageerrors.EmptyFormField;
-import com.aps.services.user.model.domain.EmployeeRole;
+import com.aps.services.user.model.domain.AccountRole;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 /**
  * @author amen
@@ -25,7 +27,7 @@ public class EmployeeDto {
     private String username;
     private String password;
     private String email;
-    private EmployeeRole role;
+    private Set<AccountRole> roles;
 
 
     public void validateEmployeeEditForm(){

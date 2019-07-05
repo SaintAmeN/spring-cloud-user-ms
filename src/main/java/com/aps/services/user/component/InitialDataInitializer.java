@@ -2,7 +2,7 @@ package com.aps.services.user.component;
 
 
 import com.aps.services.user.model.domain.Employee;
-import com.aps.services.user.model.domain.EmployeeRole;
+import com.aps.services.user.model.domain.AccountRole;
 import com.aps.services.user.repository.EmployeeRepository;
 import com.aps.services.user.repository.EmployeeRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +44,9 @@ public class InitialDataInitializer implements
 
     @Transactional
     public void addRole(String name) {
-        Optional<EmployeeRole> roleOpt = employeeRoleRepository.findByName(name);
+        Optional<AccountRole> roleOpt = employeeRoleRepository.findByName(name);
         if (!roleOpt.isPresent()) {
-            employeeRoleRepository.save(new EmployeeRole(name));
+            employeeRoleRepository.save(new AccountRole(name));
         }
     }
 
@@ -54,9 +54,9 @@ public class InitialDataInitializer implements
     public void addEmployee(String username, String password, String email, String... roles) {
         Optional<Employee> employeeOptional = employeeRepository.findByUsername(username);
         if (!employeeOptional.isPresent()) {
-            List<EmployeeRole> rolesList = new ArrayList<>();
+            List<AccountRole> rolesList = new ArrayList<>();
             for (String role : roles) {
-                Optional<EmployeeRole> employeeRoleOptional = employeeRoleRepository.findByName(role);
+                Optional<AccountRole> employeeRoleOptional = employeeRoleRepository.findByName(role);
                 employeeRoleOptional.ifPresent(rolesList::add);
             }
 

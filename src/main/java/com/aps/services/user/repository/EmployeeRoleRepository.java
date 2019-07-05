@@ -1,6 +1,6 @@
 package com.aps.services.user.repository;
 
-import com.aps.services.user.model.domain.EmployeeRole;
+import com.aps.services.user.model.domain.AccountRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
  * @created 05.07.19
  */
 @Repository
-public interface EmployeeRoleRepository extends JpaRepository<EmployeeRole, Long> {
+public interface EmployeeRoleRepository extends JpaRepository<AccountRole, Long> {
 
-    Optional<EmployeeRole> findByName(String name);
+    Optional<AccountRole> findByName(String name);
 }

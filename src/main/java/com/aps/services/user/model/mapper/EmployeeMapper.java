@@ -15,7 +15,7 @@ public interface EmployeeMapper {
             @Mapping(source = "surname", target = "surname"),
             @Mapping(source = "username", target = "username"),
             @Mapping(source = "password", target = "password"),
-            @Mapping(ignore = true, target = "role"),
+            @Mapping(ignore = true, target = "roles"),
             @Mapping(ignore = true, target = "activationId"),
     })
     Employee dtoToEmployee(EmployeeDto employeeModifyDto);
@@ -25,7 +25,7 @@ public interface EmployeeMapper {
             @Mapping(source = "name", target = "name"),
             @Mapping(source = "surname", target = "surname"),
             @Mapping(source = "username", target = "username"),
-            @Mapping(target = "role", ignore = true),
+            @Mapping(target = "roles", ignore = true),
             @Mapping(target = "id", ignore = true),
             @Mapping(target = "password", ignore = true),
     })

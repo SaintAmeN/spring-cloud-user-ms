@@ -20,14 +20,14 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeRole implements IBaseEntity{
+public class AccountRole implements IBaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
 
-    public EmployeeRole(String name) {
+    public AccountRole(String name) {
         this.name = name;
     }
 }
