@@ -2,7 +2,7 @@ spring:
   application:
     name: user-ms
   profiles:
-    active: @maven-active-profile@
+    active: @bootstrapprofile@
   cloud:
     config:
       uri: http://10.1.1.22:7002

@@ -17,6 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <production-active>false</production-active>
     </properties>
 
     <dependencies>
@@ -101,33 +102,40 @@
         </dependencies>
     </dependencyManagement>
 
-
     <profiles>
         <profile>
-            <id>production</id>
+            <id>dev</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
                 <property>
-                    <name>env</name>
-                    <value>prod</value>
+                    <name>env.machine</name>  <!--To zmienna środowiskowa.-->
+                    <value>development</value>
                 </property>
             </activation>
             <properties>
-                <spring.active.profile>production</spring.active.profile>
-                <maven-active-profile>prod</maven-active-profile>
+                <bootstrapprofile>development</bootstrapprofile>
+                <production-active>false</production-active>
             </properties>
         </profile>
         <profile>
-            <id>development</id>
+            <id>prod</id>
             <activation>
                 <property>
-                    <name>env</name>
-                    <value>dev</value>
+                    <name>production-active</name>
+                    <value>true</value>
                 </property>
             </activation>
             <properties>
-                <spring.active.profile>development</spring.active.profile>
-                <maven-active-profile>dev</maven-active-profile>
+                <bootstrapprofile>production</bootstrapprofile>
+            </properties>
+        </profile>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <bootstrapprofile>default</bootstrapprofile>
+                <production-active>false</production-active>
             </properties>
         </profile>
     </profiles>
@@ -143,12 +151,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <profiles>
-                        <profile>production</profile>
-                        <profile>development</profile>
-                    </profiles>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

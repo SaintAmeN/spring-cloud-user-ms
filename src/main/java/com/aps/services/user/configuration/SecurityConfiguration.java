@@ -43,16 +43,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+//        http.csrf().disable()
+//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                .and()
+//                .exceptionHandling().authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED))
+//                .and()
+//                .addFilter(new JwtAuthenticationFilter(authenticationManager(), userJwtConfig, tokenUtility))
+//                .addFilterAfter(new JwtTokenAuthenticationFilter(userJwtConfig, tokenUtility), UsernamePasswordAuthenticationFilter.class)
+//                .authorizeRequests()
+//                .antMatchers(HttpMethod.POST, userJwtConfig.getUriLogin()).permitAll()
+//                .anyRequest().authenticated();
         http.csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .exceptionHandling().authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED))
-                .and()
-                .addFilter(new JwtAuthenticationFilter(authenticationManager(), userJwtConfig, tokenUtility))
-                .addFilterAfter(new JwtTokenAuthenticationFilter(userJwtConfig, tokenUtility), UsernamePasswordAuthenticationFilter.class)
-                .authorizeRequests()
-                .antMatchers(HttpMethod.POST, userJwtConfig.getUriLogin()).permitAll()
-                .anyRequest().authenticated();
+                .authorizeRequests().antMatchers("/**").permitAll();
     }
 
     @Override
