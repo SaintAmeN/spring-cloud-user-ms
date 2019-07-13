@@ -1,12 +1,10 @@
 package com.aps.services.user.service;
 
-import com.aps.services.user.exception.usageerrors.NonExistentEntity;
+import com.aps.services.model.dto.userservice.EmployeeDto;
+import com.aps.services.model.exception.usageerrors.NonExistentEntity;
 import com.aps.services.user.model.domain.Employee;
-import com.aps.services.user.model.dto.EmployeeDto;
-import com.aps.services.user.model.mapper.EmployeeMapper;
 import com.aps.services.user.model.mapper.EmployeeMapperDecorator;
 import com.aps.services.user.repository.EmployeeRepository;
-import com.aps.services.user.util.PropertyManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -44,5 +42,9 @@ public class EmployeeService {
             return employeeRepository.save(employee);
         }
         throw new NonExistentEntity();
+    }
+
+    public String getEncryptedPassword(String username){
+        return employeeRepository.getEmployeeByUsername(username).getPassword();
     }
 }

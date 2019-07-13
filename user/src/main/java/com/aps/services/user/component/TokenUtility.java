@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
  */
 @Component
 public class TokenUtility {
-    private final static String ISSUER_UUID = "AUTH_USER_ISSUER_CyView";
+    private final static String ISSUER_UUID = "AUTH_USER_ISSUER_ApsServices";
 
     @Autowired
     private UserJwtConfig userJwtConfig;
@@ -38,7 +38,6 @@ public class TokenUtility {
                         .map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
 
                 .claim(userJwtConfig.getAllowedIpTag(), request.getRemoteAddr())
-
                 .setIssuedAt(new Date(now))
                 .setExpiration(new Date(now + userJwtConfig.getExpiration() * 1000))  // in milliseconds
                 .signWith(SignatureAlgorithm.HS512, userJwtConfig.getSecret().getBytes())

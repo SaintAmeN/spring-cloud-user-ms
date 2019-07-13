@@ -5,4 +5,4 @@ spring:
     active: @bootstrapprofile@
   cloud:
     config:
-      uri: http://10.1.1.22:7002
+      uri: http://localhost:8002

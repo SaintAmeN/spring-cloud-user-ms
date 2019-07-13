@@ -4,6 +4,9 @@ import com.aps.services.user.component.TokenUtility;
 import com.aps.services.user.component.UserJwtConfig;
 import com.aps.services.user.filters.JwtAuthenticationFilter;
 import com.aps.services.user.filters.JwtTokenAuthenticationFilter;
+import com.aps.services.user.service.EmployeeService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -26,37 +29,28 @@ import javax.servlet.http.HttpServletResponse;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@RequiredArgsConstructor
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private UserDetailsService authorizationService;
-    private UserJwtConfig userJwtConfig;
-    private PasswordEncoder passwordEncoder;
-    private TokenUtility tokenUtility;
-
-    @Autowired
-    public SecurityConfiguration(UserDetailsService authorizationService, UserJwtConfig userJwtConfig, PasswordEncoder passwordEncoder, TokenUtility tokenUtility) {
-        this.authorizationService = authorizationService;
-        this.userJwtConfig = userJwtConfig;
-        this.passwordEncoder = passwordEncoder;
-        this.tokenUtility = tokenUtility;
-    }
+    private final UserDetailsService authorizationService;
+    private final UserJwtConfig userJwtConfig;
+    private final PasswordEncoder passwordEncoder;
+    private final TokenUtility tokenUtility;
+    private final ObjectMapper objectMapper;
+    private final EmployeeService employeeService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.csrf().disable()
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                .and()
-//                .exceptionHandling().authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED))
-//                .and()
-//                .addFilter(new JwtAuthenticationFilter(authenticationManager(), userJwtConfig, tokenUtility))
-//                .addFilterAfter(new JwtTokenAuthenticationFilter(userJwtConfig, tokenUtility), UsernamePasswordAuthenticationFilter.class)
-//                .authorizeRequests()
-//                .antMatchers(HttpMethod.POST, userJwtConfig.getUriLogin()).permitAll()
-//                .anyRequest().authenticated();
         http.csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .authorizeRequests().antMatchers("/**").permitAll();
+                .exceptionHandling().authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED))
+                .and()
+                .addFilter(new JwtAuthenticationFilter(authenticationManager(), userJwtConfig, tokenUtility, objectMapper, employeeService))
+                .addFilterAfter(new JwtTokenAuthenticationFilter(userJwtConfig, tokenUtility), UsernamePasswordAuthenticationFilter.class)
+                .authorizeRequests()
+                .antMatchers(HttpMethod.POST, userJwtConfig.getUriLogin()).permitAll()
+                .anyRequest().authenticated();
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.aps.services.user.model.domain;
 
+import com.aps.services.model.dto.common.AbstractResponse;
+
 /**
  * @author amen
  * @project user
@@ -7,4 +9,9 @@ package com.aps.services.user.model.domain;
  */
 public interface IBaseEntity {
     Long getId();
+
+
+    public static AbstractResponse createUpdateResponse(IBaseEntity entity) {
+        return AbstractResponse.builder().id(entity.getId()).message("Entity updated successfully.").build();
+    }
 }

@@ -2,8 +2,8 @@ package com.aps.services.user.filters;
 
 import com.aps.services.user.component.TokenUtility;
 import com.aps.services.user.component.UserJwtConfig;
-import com.aps.services.user.exception.security.UnauthorizedCall;
-import com.aps.services.user.exception.security.UnauthorizedIpCall;
+import com.aps.services.model.exception.security.UnauthorizedCall;
+import com.aps.services.model.exception.security.UnauthorizedIpCall;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
