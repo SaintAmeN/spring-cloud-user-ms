@@ -1,0 +1,3 @@
+[submodule "common-ms"]
+	path = common-ms
+	url = ssh://git@bitbucket.aps-drones.com:7999/ass/common-ms.git

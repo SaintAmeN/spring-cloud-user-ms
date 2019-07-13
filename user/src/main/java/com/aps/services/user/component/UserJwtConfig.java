@@ -22,7 +22,7 @@ public class UserJwtConfig {
     @Value("${security.jwt.user.header:Authorization}")
     private String header;
 
-    @Value("${security.jwt.user.prefix:Bearer }")
+    @Value("${security.jwt.user.prefix:Bearer}")
     private String prefix;
 
     @Value("${security.jwt.user.expiration:#{24*60*60}}")
