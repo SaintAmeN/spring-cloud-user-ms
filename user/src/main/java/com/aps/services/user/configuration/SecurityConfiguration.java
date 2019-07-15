@@ -1,14 +1,12 @@
 package com.aps.services.user.configuration;
 
-import com.aps.services.user.component.TokenUtility;
-import com.aps.services.user.component.UserJwtConfig;
+import com.aps.services.auth.JwtTokenAuthenticationFilter;
+import com.aps.services.component.TokenParserUtility;
+import com.aps.services.config.UserJwtConfig;
+import com.aps.services.user.component.TokenGeneratorUtility;
 import com.aps.services.user.filters.JwtAuthenticationFilter;
-import com.aps.services.user.filters.JwtTokenAuthenticationFilter;
-import com.aps.services.user.service.EmployeeService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -35,9 +33,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private final UserDetailsService authorizationService;
     private final UserJwtConfig userJwtConfig;
     private final PasswordEncoder passwordEncoder;
-    private final TokenUtility tokenUtility;
-    private final ObjectMapper objectMapper;
-    private final EmployeeService employeeService;
+    private final TokenParserUtility tokenParserUtility;
+    private final TokenGeneratorUtility tokenGeneratorUtility;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -46,8 +43,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .exceptionHandling().authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 .and()
-                .addFilter(new JwtAuthenticationFilter(authenticationManager(), userJwtConfig, tokenUtility, objectMapper, employeeService))
-                .addFilterAfter(new JwtTokenAuthenticationFilter(userJwtConfig, tokenUtility), UsernamePasswordAuthenticationFilter.class)
+                .addFilter(new JwtAuthenticationFilter(authenticationManager(), userJwtConfig, tokenGeneratorUtility))
+                .addFilterAfter(new JwtTokenAuthenticationFilter(userJwtConfig, tokenParserUtility), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, userJwtConfig.getUriLogin()).permitAll()
                 .anyRequest().authenticated();

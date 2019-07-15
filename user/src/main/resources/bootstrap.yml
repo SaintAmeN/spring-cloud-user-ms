@@ -5,4 +5,4 @@ spring:
     active: @bootstrapprofile@
   cloud:
     config:
-      uri: http://localhost:8002
+      uri: http://aps-platform.com:18002
