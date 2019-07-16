@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.aps.services</groupId>
-    <artifactId>ms-user</artifactId>
+    <artifactId>user-ms</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
