@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.aps.services</groupId>
-    <artifactId>user-ms</artifactId>
+    <artifactId>user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>user-ms</name>
+    <name>user</name>
     <description>Authorization service for APS Services ecosystem.</description>
 
     <properties>
