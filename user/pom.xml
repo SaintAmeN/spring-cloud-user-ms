@@ -17,7 +17,6 @@
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-        <production-active>false</production-active>
     </properties>
 
     <dependencies>
@@ -129,6 +128,19 @@
             </activation>
             <properties>
                 <bootstrapprofile>development</bootstrapprofile>
+                <production-active>false</production-active>
+            </properties>
+        </profile>
+        <profile>
+            <id>docker</id>
+            <activation>
+                <property>
+                    <name>env.machine</name>
+                    <value>docker</value>
+                </property>
+            </activation>
+            <properties>
+                <bootstrapprofile>docker</bootstrapprofile>
                 <production-active>false</production-active>
             </properties>
         </profile>
