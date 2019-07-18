@@ -119,16 +119,17 @@
 
     <profiles>
         <profile>
-            <id>dev</id>
+            <id>development</id>
             <activation>
+                <activeByDefault>true</activeByDefault>
                 <property>
                     <name>env.machine</name>  <!--To zmienna środowiskowa.-->
                     <value>development</value>
                 </property>
             </activation>
             <properties>
+                <bootstrapconfigurl>http://aps-platform.com:18002</bootstrapconfigurl>
                 <bootstrapprofile>development</bootstrapprofile>
-                <production-active>false</production-active>
             </properties>
         </profile>
         <profile>
@@ -141,29 +142,46 @@
             </activation>
             <properties>
                 <bootstrapprofile>docker</bootstrapprofile>
-                <production-active>false</production-active>
+                <bootstrapconfigurl>http://config:18002</bootstrapconfigurl>
             </properties>
         </profile>
         <profile>
-            <id>prod</id>
+            <id>production</id>
             <activation>
                 <property>
-                    <name>production-active</name>
-                    <value>true</value>
+                    <name>env.machine</name>  <!--To zmienna środowiskowa.-->
+                    <value>production</value>
                 </property>
             </activation>
             <properties>
                 <bootstrapprofile>production</bootstrapprofile>
+                <bootstrapconfigurl>http://10.1.1.22:18002</bootstrapconfigurl>
             </properties>
         </profile>
         <profile>
-            <id>default</id>
+            <id>local</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>env.machine</name>  <!--To zmienna środowiskowa.-->
+                    <value>local</value>
+                </property>
             </activation>
             <properties>
-                <bootstrapprofile>default</bootstrapprofile>
-                <production-active>false</production-active>
+                <bootstrapprofile>local</bootstrapprofile>
+                <bootstrapconfigurl>http://aps-platform.com:18002</bootstrapconfigurl>
+            </properties>
+        </profile>
+        <profile>
+            <id>localbranch</id>
+            <activation>
+                <property>
+                    <name>env.machine</name>  <!--To zmienna środowiskowa.-->
+                    <value>localbranch</value>
+                </property>
+            </activation>
+            <properties>
+                <bootstrapprofile>localbranch</bootstrapprofile>
+                <bootstrapconfigurl>http://localhost:18002</bootstrapconfigurl>
             </properties>
         </profile>
     </profiles>
