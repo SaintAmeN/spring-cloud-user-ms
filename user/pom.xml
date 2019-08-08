@@ -8,11 +8,10 @@
         <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.aps.services</groupId>
+    <groupId>com.amen.services</groupId>
     <artifactId>user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>user</name>
-    <description>Authorization service for APS Services ecosystem.</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -87,11 +86,11 @@
             <version>5.1.5.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>com.aps.services</groupId>
-            <artifactId>common-services</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.0</version>
         </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -116,75 +115,6 @@
             </snapshots>
         </repository>
     </repositories>
-
-    <profiles>
-        <profile>
-            <id>development</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-                <property>
-                    <name>env.machine</name>  <!--To zmienna środowiskowa.-->
-                    <value>development</value>
-                </property>
-            </activation>
-            <properties>
-                <bootstrapconfigurl>http://aps-platform.com:18002</bootstrapconfigurl>
-                <bootstrapprofile>development</bootstrapprofile>
-            </properties>
-        </profile>
-        <profile>
-            <id>docker</id>
-            <activation>
-                <property>
-                    <name>env.machine</name>
-                    <value>docker</value>
-                </property>
-            </activation>
-            <properties>
-                <bootstrapprofile>docker</bootstrapprofile>
-                <bootstrapconfigurl>http://config:18002</bootstrapconfigurl>
-            </properties>
-        </profile>
-        <profile>
-            <id>production</id>
-            <activation>
-                <property>
-                    <name>env.machine</name>  <!--To zmienna środowiskowa.-->
-                    <value>production</value>
-                </property>
-            </activation>
-            <properties>
-                <bootstrapprofile>production</bootstrapprofile>
-                <bootstrapconfigurl>http://10.1.1.22:18002</bootstrapconfigurl>
-            </properties>
-        </profile>
-        <profile>
-            <id>local</id>
-            <activation>
-                <property>
-                    <name>env.machine</name>  <!--To zmienna środowiskowa.-->
-                    <value>local</value>
-                </property>
-            </activation>
-            <properties>
-                <bootstrapprofile>local</bootstrapprofile>
-                <bootstrapconfigurl>http://aps-platform.com:18002</bootstrapconfigurl>
-            </properties>
-        </profile>
-        <profile>
-            <id>localbranch</id>
-            <activation>
-                <property>
-                    <name>env.machine</name>  <!--To zmienna środowiskowa.-->
-                    <value>localbranch</value>
-                </property>
-            </activation>
-            <properties>
-                <bootstrapprofile>localbranch</bootstrapprofile>
-                <bootstrapconfigurl>http://localhost:18002</bootstrapconfigurl>
-            </properties>
-        </profile>
-    </profiles>
 
     <build>
         <resources>

@@ -1,14 +1,12 @@
 package com.aps.services.user.component;
 
-import com.aps.services.config.UserJwtConfig;
+import com.aps.services.user.config.UserJwtConfig;
 import com.aps.services.user.model.domain.Employee;
 import com.aps.services.user.repository.EmployeeRepository;
-import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -16,13 +14,12 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.constraints.NotNull;
 import java.util.Base64;
 import java.util.Date;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.aps.services.component.TokenParserUtility.ISSUER_UUID;
+import static com.aps.services.user.component.TokenParserUtility.ISSUER_UUID;
 
 /**
  * @author amen

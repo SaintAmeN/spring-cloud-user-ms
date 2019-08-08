@@ -1,7 +1,7 @@
 package com.aps.services.user.service;
 
-import com.aps.services.model.dto.userservice.EmployeeDto;
-import com.aps.services.model.exception.usageerrors.NonExistentEntity;
+import com.aps.services.user.model.userservice.EmployeeDto;
+import com.aps.services.user.exception.usageerrors.NonExistentEntity;
 import com.aps.services.user.model.domain.Employee;
 import com.aps.services.user.model.mapper.EmployeeMapperDecorator;
 import com.aps.services.user.repository.EmployeeRepository;

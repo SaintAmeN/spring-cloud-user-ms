@@ -1,7 +1,7 @@
 package com.aps.services.user.filters;
 
-import com.aps.services.config.UserJwtConfig;
-import com.aps.services.model.dto.userservice.requests.AuthenticationRequestDto;
+import com.aps.services.user.config.UserJwtConfig;
+import com.aps.services.user.model.userservice.requests.AuthenticationRequestDto;
 import com.aps.services.user.component.TokenGeneratorUtility;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;

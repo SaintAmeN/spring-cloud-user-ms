@@ -1,6 +1,6 @@
 package com.aps.services.user.model.mapper;
 
-import com.aps.services.model.dto.userservice.EmployeeDto;
+import com.aps.services.user.model.userservice.EmployeeDto;
 import com.aps.services.user.model.domain.Employee;
 import org.mapstruct.*;
 

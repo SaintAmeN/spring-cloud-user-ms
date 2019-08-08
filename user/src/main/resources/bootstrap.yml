@@ -1,8 +1,6 @@
 spring:
   application:
     name: user-ms
-  profiles:
-    active: @bootstrapprofile@
   cloud:
     config:
-      uri: @bootstrapconfigurl@
+      uri: http://localhost:8002

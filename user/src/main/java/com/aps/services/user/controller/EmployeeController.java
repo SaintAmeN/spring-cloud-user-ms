@@ -1,13 +1,12 @@
 package com.aps.services.user.controller;
 
-import com.aps.services.model.dto.common.AbstractResponse;
-import com.aps.services.model.dto.userservice.EmployeeDto;
-import com.aps.services.model.dto.userservice.responses.AuthenticationResponse;
+import com.aps.services.user.model.common.AbstractResponse;
+import com.aps.services.user.model.userservice.EmployeeDto;
+import com.aps.services.user.model.userservice.responses.AuthenticationResponse;
 import com.aps.services.user.model.domain.AccountRole;
 import com.aps.services.user.model.domain.Employee;
 import com.aps.services.user.model.domain.IBaseEntity;
 import com.aps.services.user.service.EmployeeService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.ModelMap;
