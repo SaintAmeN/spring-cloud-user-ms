@@ -1,4 +1,4 @@
-package com.aps.services.user.config;
+package com.amen.services.user.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;

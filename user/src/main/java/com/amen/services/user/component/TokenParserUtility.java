@@ -1,6 +1,6 @@
-package com.aps.services.user.component;
+package com.amen.services.user.component;
 
-import com.aps.services.user.config.UserJwtConfig;
+import com.amen.services.user.config.UserJwtConfig;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import lombok.RequiredArgsConstructor;

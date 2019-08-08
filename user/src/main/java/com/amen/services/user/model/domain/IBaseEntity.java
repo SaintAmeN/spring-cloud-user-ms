@@ -1,6 +1,6 @@
-package com.aps.services.user.model.domain;
+package com.amen.services.user.model.domain;
 
-import com.aps.services.user.model.common.AbstractResponse;
+import com.amen.services.user.model.common.AbstractResponse;
 
 /**
  * @author amen

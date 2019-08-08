@@ -1,6 +1,6 @@
-package com.aps.services.user.component;
+package com.amen.services.user.component;
 
-import com.aps.services.user.exception.UserNotLoggedInException;
+import com.amen.services.user.exception.UserNotLoggedInException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;

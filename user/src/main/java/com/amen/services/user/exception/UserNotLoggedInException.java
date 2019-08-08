@@ -1,4 +1,4 @@
-package com.aps.services.user.exception;
+package com.amen.services.user.exception;
 
 public class UserNotLoggedInException extends Exception {
     public UserNotLoggedInException(String message) {

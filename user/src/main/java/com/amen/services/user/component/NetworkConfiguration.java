@@ -1,4 +1,4 @@
-package com.aps.services.user.component;
+package com.amen.services.user.component;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;

@@ -1,6 +1,6 @@
-package com.aps.services.user.model.userservice;
+package com.amen.services.user.model.userservice;
 
-import com.aps.services.user.exception.usageerrors.EmptyFormField;
+import com.amen.services.user.exception.usageerrors.EmptyFormField;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

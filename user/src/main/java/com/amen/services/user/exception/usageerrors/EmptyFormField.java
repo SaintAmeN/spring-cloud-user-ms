@@ -1,4 +1,4 @@
-package com.aps.services.user.exception.usageerrors;
+package com.amen.services.user.exception.usageerrors;
 
 public class EmptyFormField extends UsageException {
     private final static String MESSAGE = "Field '%s' cannot be empty.";

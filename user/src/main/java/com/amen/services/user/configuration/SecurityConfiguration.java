@@ -1,10 +1,10 @@
-package com.aps.services.user.configuration;
+package com.amen.services.user.configuration;
 
-import com.aps.services.user.auth.JwtTokenAuthenticationFilter;
-import com.aps.services.user.component.TokenParserUtility;
-import com.aps.services.user.config.UserJwtConfig;
-import com.aps.services.user.component.TokenGeneratorUtility;
-import com.aps.services.user.filters.JwtAuthenticationFilter;
+import com.amen.services.user.auth.JwtTokenAuthenticationFilter;
+import com.amen.services.user.component.TokenGeneratorUtility;
+import com.amen.services.user.filters.JwtAuthenticationFilter;
+import com.amen.services.user.component.TokenParserUtility;
+import com.amen.services.user.config.UserJwtConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;

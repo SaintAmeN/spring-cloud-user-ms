@@ -1,4 +1,4 @@
-package com.aps.services.user.security;
+package com.amen.services.user.security;
 
 public class SecurityConstants {
     public static final String SECRET = "TrzXq45gBqQtxkbm";

@@ -1,4 +1,4 @@
-package com.aps.services.user.exception.usageerrors;
+package com.amen.services.user.exception.usageerrors;
 
 public class DuplicateProperty extends UsageException {
     private final static String MESSAGE = "Entity with given '%s' already exists.";

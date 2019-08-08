@@ -1,4 +1,4 @@
-package com.aps.services.user.model;
+package com.amen.services.user.model;
 
 import lombok.Builder;
 import lombok.Getter;

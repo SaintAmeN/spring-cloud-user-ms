@@ -1,4 +1,4 @@
-package com.aps.services.user.model.domain;
+package com.amen.services.user.model.domain;
 
 import lombok.*;
 

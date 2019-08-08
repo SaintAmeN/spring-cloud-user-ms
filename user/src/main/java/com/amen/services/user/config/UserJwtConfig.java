@@ -1,4 +1,4 @@
-package com.aps.services.user.config;
+package com.amen.services.user.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

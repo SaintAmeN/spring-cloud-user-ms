@@ -1,8 +1,8 @@
-package com.aps.services.user.filters;
+package com.amen.services.user.filters;
 
-import com.aps.services.user.config.UserJwtConfig;
-import com.aps.services.user.model.userservice.requests.AuthenticationRequestDto;
-import com.aps.services.user.component.TokenGeneratorUtility;
+import com.amen.services.user.config.UserJwtConfig;
+import com.amen.services.user.model.userservice.requests.AuthenticationRequestDto;
+import com.amen.services.user.component.TokenGeneratorUtility;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;

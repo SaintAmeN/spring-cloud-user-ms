@@ -1,4 +1,4 @@
-package com.aps.services.user.exception.usageerrors;
+package com.amen.services.user.exception.usageerrors;
 
 public class UsageException extends RuntimeException {
     protected String referTo;

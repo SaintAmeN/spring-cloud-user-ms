@@ -1,6 +1,6 @@
-package com.aps.services.user.util;
+package com.amen.services.user.util;
 
-import com.aps.services.user.exception.usageerrors.DuplicateProperty;
+import com.amen.services.user.exception.usageerrors.DuplicateProperty;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;

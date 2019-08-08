@@ -1,4 +1,4 @@
-package com.aps.services.user.model.common;
+package com.amen.services.user.model.common;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

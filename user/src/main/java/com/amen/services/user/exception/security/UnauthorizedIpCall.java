@@ -1,4 +1,4 @@
-package com.aps.services.user.exception.security;
+package com.amen.services.user.exception.security;
 
 /**
  * @author amen

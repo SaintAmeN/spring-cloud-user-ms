@@ -1,10 +1,10 @@
-package com.aps.services.user.component;
+package com.amen.services.user.component;
 
 
-import com.aps.services.user.model.domain.Employee;
-import com.aps.services.user.model.domain.AccountRole;
-import com.aps.services.user.repository.EmployeeRepository;
-import com.aps.services.user.repository.EmployeeRoleRepository;
+import com.amen.services.user.model.domain.Employee;
+import com.amen.services.user.model.domain.AccountRole;
+import com.amen.services.user.repository.EmployeeRepository;
+import com.amen.services.user.repository.EmployeeRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

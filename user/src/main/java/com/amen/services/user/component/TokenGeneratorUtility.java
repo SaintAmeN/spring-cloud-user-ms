@@ -1,8 +1,8 @@
-package com.aps.services.user.component;
+package com.amen.services.user.component;
 
-import com.aps.services.user.config.UserJwtConfig;
-import com.aps.services.user.model.domain.Employee;
-import com.aps.services.user.repository.EmployeeRepository;
+import com.amen.services.user.config.UserJwtConfig;
+import com.amen.services.user.model.domain.Employee;
+import com.amen.services.user.repository.EmployeeRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ import java.util.Date;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.aps.services.user.component.TokenParserUtility.ISSUER_UUID;
+import static com.amen.services.user.component.TokenParserUtility.ISSUER_UUID;
 
 /**
  * @author amen

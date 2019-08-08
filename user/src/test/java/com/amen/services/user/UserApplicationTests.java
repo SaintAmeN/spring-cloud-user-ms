@@ -1,4 +1,4 @@
-package com.aps.services.user;
+package com.amen.services.user;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

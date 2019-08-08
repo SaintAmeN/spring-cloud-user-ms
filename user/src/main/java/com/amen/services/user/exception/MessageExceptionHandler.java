@@ -1,6 +1,6 @@
-package com.aps.services.user.exception;
+package com.amen.services.user.exception;
 
-import com.aps.services.user.exception.usageerrors.UsageException;
+import com.amen.services.user.exception.usageerrors.UsageException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.FlashMap;

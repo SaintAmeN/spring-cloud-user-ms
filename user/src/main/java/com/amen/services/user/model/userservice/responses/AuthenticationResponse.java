@@ -1,4 +1,4 @@
-package com.aps.services.user.model.userservice.responses;
+package com.amen.services.user.model.userservice.responses;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
