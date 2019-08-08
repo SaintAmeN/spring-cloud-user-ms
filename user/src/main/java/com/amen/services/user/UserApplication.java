@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @Slf4j
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.aps.services.user", "com.aps.services.config", "com.aps.services.service", "com.aps.services.component"})
+@ComponentScan(basePackages = {"com.amen.services"})
 @EnableDiscoveryClient
 public class UserApplication {
 
